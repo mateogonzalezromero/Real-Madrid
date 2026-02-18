@@ -137,6 +137,71 @@
         Su impacto trasciende el deporte y alcanza el entretenimiento global.
     </p>
 </section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Adivina el Número</title>
+<style>
+    body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        background-color: #e0f7fa;
+        margin-top: 50px;
+    }
+
+    input {
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #mensaje {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h1>🎲 Adivina el Número</h1>
+<p>Estoy pensando en un número del 1 al 10...</p>
+
+<input type="number" id="numero" min="1" max="10">
+<button onclick="adivinar()">Adivinar</button>
+
+<p id="mensaje"></p>
+
+<script>
+let numeroSecreto = Math.floor(Math.random() * 10) + 1;
+
+function adivinar() {
+    let intento = Number(document.getElementById("numero").value);
+    let mensaje = document.getElementById("mensaje");
+
+    if (!intento) {
+        mensaje.textContent = "⚠️ Escribe un número válido.";
+        return;
+    }
+
+    if (intento === numeroSecreto) {
+        mensaje.textContent = "🎉 ¡Correcto! ¡Ganaste!";
+    } else if (intento < numeroSecreto) {
+        mensaje.textContent = "📉 Muy bajo. Intenta otra vez.";
+    } else {
+        mensaje.textContent = "📈 Muy alto. Intenta otra vez.";
+    }
+}
+</script>
+
+</body>
+</html>
 
 <footer>
     <p>© 2026 Página creada sobre el Real Madrid - Proyecto Web IA</p>
@@ -144,3 +209,4 @@
 
 </body>
 </html>
+
